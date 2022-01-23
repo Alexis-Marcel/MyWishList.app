@@ -1,7 +1,7 @@
 <?php
 
 
-namespace wish\models;
+namespace wish\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -21,11 +21,11 @@ class Item extends Model
     ];
 
     public function liste(){
-        return $this->belongsTo('\wish\models\Liste','liste_id');
+        return $this->belongsTo('\wish\Models\Liste','liste_id');
     }
 
     public function recupReservation() {
-        return $this->hasMany('\wish\models\Reservation','id_item') ;
+        return $this->hasMany('\wish\Models\Reservation','id_item') ;
     }
 
     public function removeItem(){

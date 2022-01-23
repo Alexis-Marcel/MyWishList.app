@@ -13,7 +13,7 @@
                                         <div class="section text-center">
                                             <h4 class="mb-4 pb-1">Share the list</h4>
                                                 <div class="form-group">
-                                                    <p class="form-control"><span id="tocopy">http://localhost/public/liste/{{ value.token}}/</span></p>
+                                                    <p class="form-control"><span id="tocopy">{{ base_url() }}/liste/{{ value.token}}/</span></p>
                                                     <i class="input-icon fas fa-share-square"></i>
                                                     <input type="button" value="Copy the link" class="js-copy btn" id="btn-form" data-target="#tocopy">
                                                 </div>

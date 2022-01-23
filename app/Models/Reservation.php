@@ -1,7 +1,7 @@
 <?php
 
 
-namespace wish\models;
+namespace wish\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -18,7 +18,7 @@ class Reservation extends Model
     ];
 
     public function item(){
-        return $this->belongsTo('\wish\models\Item','id_item');
+        return $this->belongsTo('\wish\Models\Item','id_item');
     }
 
     public function removeReservation(){

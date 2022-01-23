@@ -6,7 +6,7 @@ use Psr\Http\Message\RequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
 use Respect\Validation\Validator as v;
 use wish\Controllers\Controller;
-use wish\models\Liste;
+use wish\Models\Liste;
 
 class EditListController extends Controller
 {
@@ -46,7 +46,7 @@ class EditListController extends Controller
         }
         $wishlists[] =$tokenSecure;
 
-        setcookie('wishLists', serialize($wishlists), time() + 365*24*3600, '/','localhost', false, true);
+        setcookie('wishLists', serialize($wishlists), time() + 365*24*3600,'/','webetu.iutnc.univ-lorraine.fr', false, false);
 
         $this->flash->addMessage('success',"The list \"{$request->getParam('title')}\" has been created !");
 

@@ -4,7 +4,7 @@ namespace wish\Middleware;
 
 use Psr\Http\Message\RequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
-use wish\models\Item;
+use wish\Models\Item;
 
 class ReservationMiddleware extends Middleware
 {

@@ -4,8 +4,7 @@ namespace wish\Controllers;
 
 use Psr\Http\Message\RequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
-use wish\models\Item;
-use wish\models\Liste;
+use wish\Models\Item;
 
 class ItemController extends Controller
 {

@@ -2,12 +2,11 @@ RewriteEngine On
 #
 # RewriteBase indispensable sur webetu :
 
-# RewriteBase /www/username0/mywishlist
+# RewriteBase /www/pruliere1u/wishlist/public
 
 
 #
 # Pour interdire l'accès aux répertoires contenant du code
-RewriteRule ^sql(/.*|)$ - [NC,F]
 RewriteRule ^app(/.*|)$ - [NC,F]
 RewriteRule ^vendor(/.*|)$ - [NC,F]
 RewriteRule ^resources(/.*|)$ - [NC,F]

@@ -1,6 +1,6 @@
 <?php
 
-namespace wish\models;
+namespace wish\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,15 +14,16 @@ class Liste extends Model{
         'titre',
         'description',
         'expiration',
-        'token'
+        'token',
+	'visibilite'
     ];
 
     public function recupItems() {
-        return $this->hasMany('\wish\models\Item','liste_id') ;
+        return $this->hasMany('\wish\Models\Item','liste_id') ;
     }
 
     public function getUser(){
-        return $this->belongsTo('\wish\models\User','user_id');
+        return $this->belongsTo('\wish\Models\User','user_id');
     }
 
     public function removeList(){

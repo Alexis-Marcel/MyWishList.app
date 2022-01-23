@@ -6,8 +6,8 @@ use Psr\Http\Message\RequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
 use Respect\Validation\Validator as v;
 use wish\Controllers\Controller;
-use wish\models\Item;
-use wish\models\Liste;
+use wish\Models\Item;
+use wish\Models\Liste;
 
 class EditItemController extends Controller
 {

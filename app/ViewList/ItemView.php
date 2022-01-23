@@ -57,11 +57,12 @@ class ItemView extends View
         if($item->url != null){
             $url = "<li class='list-group-item'><a  id='url-link' href='{$item->url}'>{$item->url}</a></li>";
         }
-
+	
+	$image = '../../../../../img/' . $item->img;
         $content="
             <div class='row justify-content-center'>
                 <div class='card p-2' style='width: 18rem;'>
-                    <img src='/img/{$item->img}' class='card-img-top' alt='{$item->nom} picture'>
+                    <img src='{$image}' class='card-img-top' alt='{$item->nom} picture'>
                     <div class='card-body'>
                         <h5 class='card-title'>{$item->nom}</h5>
                         <p class='card-text'>{$item->descr}</p>

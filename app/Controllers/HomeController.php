@@ -1,10 +1,10 @@
 <?php
 
 namespace wish\Controllers;
-
+use Respect\Validation\Validator as v;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\RequestInterface as Request;
-use wish\models\Liste;
+use wish\Models\Liste;
 
 
 class HomeController extends Controller
@@ -34,6 +34,17 @@ class HomeController extends Controller
 
     public function getTokenPage(Request $request, Response $response, $parameters)
     {
+        $validation = $this->validator->validate($request, [
+            'token' => v::tokenExist()->noWhitespace()->notEmpty(),
+        ]);
+
+        if($validation->failed()){
+
+            $this->flash->addMessage('error','This token is not valid.');
+
+            return $response->withRedirect($this->router->pathFor('home'));
+        }
+
         $token = filter_var($request->getParam('token'), FILTER_SANITIZE_STRING);
 
         return $response->withRedirect($this->router->pathFor('liste',['secureToken' => $token]));

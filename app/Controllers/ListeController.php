@@ -4,7 +4,7 @@ namespace wish\Controllers;
 
 use Psr\Http\Message\RequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
-use wish\models\Liste;
+use wish\Models\Liste;
 
 class ListeController extends Controller
 {

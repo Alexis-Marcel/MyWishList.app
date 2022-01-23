@@ -5,8 +5,8 @@ namespace wish\Controllers\Reservation;
 use Psr\Http\Message\RequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
 use wish\Controllers\Controller;
-use wish\models\Item;
-use wish\models\Reservation;
+use wish\Models\Item;
+use wish\Models\Reservation;
 
 class ReservationController extends Controller
 {
