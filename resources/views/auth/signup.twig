@@ -1,0 +1,74 @@
+{% extends 'templates/app.twig' %}
+
+{% block content %}
+    <div id="sign" class="section">
+        <div class="container">
+            <div class="row full-height justify-content-center">
+                <div class="col-12 text-center align-self-center pb-5">
+                    <div class="section mt-0 pb-5 pt-5 pt-sm-2 text-center">
+                        <h6 class="mb-0 pb-3"><span><label for="reg-log">Log In</label> </span><span><label for="reg-log">Sign up</label></span></h6>
+                        <input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+                        <label for="reg-log"></label>
+                        <div class="card-3d-wrap mx-auto mt-4">
+                            <div class="card-3d-wrapper">
+                                <div class="card-front">
+                                    <div class="center-wrap">
+                                        <div class="section text-center">
+                                            <h4 class="mb-4 pb-1">Log In</h4>
+                                            <form action="{{ path_for('auth.signin') }}" method="post" autocomplete="off">
+                                                <div class="form-group">
+                                                    <input type="text" name="name" class="form-control" placeholder="Your Name" id="logname" autocomplete="off">
+                                                    <i class="input-icon uil uil-user"></i>
+                                                </div>
+                                                <div class="form-group mt-2">
+                                                    <input type="password" name="password" class="form-control" placeholder="Your Password" id="logpass" autocomplete="off">
+                                                    <i class="input-icon uil uil-lock-alt"></i>
+                                                </div>
+                                                <input type="submit" class="btn mt-4" value="Log in"/>
+                                                {{ csrf.field | raw}}
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-back">
+                                    <div class="center-wrap">
+                                        <div class="section text-center">
+                                            <h4 class="mb-4 pb-3">Sign up</h4>
+                                            <form action="{{ path_for('auth.signup') }}" method="post" autocomplete="off">
+                                                <div class="form-group">
+                                                    <input type="text" name="name" class="form-control {{ errors.name ? 'is-invalid' : '' }}" placeholder="Your Name" id="name" autocomplete="off" value="{{ old.name }}">
+                                                    <i class="input-icon uil uil-user"></i>
+                                                    <div class="invalid-feedback">
+                                                        {{ errors.name | first }}
+                                                    </div>
+                                                </div>
+                                                <div class="form-group mt-2">
+                                                    <input type="password" name="password" class="form-control {{ errors.password ? 'is-invalid' : '' }}" placeholder="Your Password" id="password" autocomplete="off">
+                                                    <i class="input-icon uil uil-lock-alt"></i>
+                                                    <div class="invalid-feedback">
+                                                        {{ errors.password | first }}
+                                                    </div>
+                                                </div>
+                                                <div class="form-group mt-2">
+                                                    <input type="password" name="repassword" class="form-control {{ errors.repassword ? 'is-invalid' : '' }}" placeholder="Confirm your password" id="repassword" autocomplete="off">
+                                                    <i class="input-icon uil uil-lock-alt"></i>
+                                                    <div class="invalid-feedback">
+                                                        {{ errors.repassword | first }}
+                                                    </div>
+                                                </div>
+                                                <input type="submit" class="btn mt-4" value="Sign up"/>
+
+                                                {{ csrf.field | raw}}
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

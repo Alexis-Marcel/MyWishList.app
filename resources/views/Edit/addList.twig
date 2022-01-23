@@ -1,0 +1,50 @@
+{% extends 'templates/app.twig' %}
+
+{% block content %}
+
+    <h2 class="mt-4">Add a wish list</h2>
+                <form action="{{ path_for('edit.addlist') }}" method="post" autocomplete="off">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Title</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Expiration</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <div class="form-group">
+                                    <input type="text" name="title" class="form-control {{ errors.title ? 'is-invalid' : '' }}" placeholder="Title of the list" id="title" autocomplete="off" value="{{ old.title }}">
+                                    <div class="invalid-feedback">
+                                        {{ errors.title | first }}
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <input type="text" name="descr" class="form-control {{ errors.descr ? 'is-invalid' : '' }}" placeholder="Description of the list" id="descr" autocomplete="off" value="{{ old.descr }}">
+                                    <div class="invalid-feedback">
+                                        {{ errors.descr | first }}
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <input type="date" name="expiration" class="form-control {{ errors.expiration ? 'is-invalid' : '' }}" placeholder="Expiration date of the list" id="expiration" autocomplete="off" value="{{ old.expiration }}">
+                                    <div class="invalid-feedback">
+                                        {{ errors.expiration | first }}
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                    <div class="float-end">
+                        <input id="add-btn" type="submit" class="btn mt-4 align-items-end" value="Add"/>
+                    </div>
+                    {{ csrf.field | raw}}
+                </form>
+{% endblock %}

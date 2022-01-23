@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand navbar-light bg-light mb-2">
+    <div class="container-fluid">
+
+        <button type="button" id="sidebarCollapse" class="navbar-btn active">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav navbar-nav ms-auto">
+                {% if auth.check %}
+                    <li class="nav-item dropstart">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user"></i>
+                            {{ auth.user.name }}
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{{ path_for('auth.password.change') }}">Change Password</a></li>
+                            <li><a class="dropdown-item" href="{{ path_for('auth.account.delete') }}">Delete Account</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="{{ path_for('auth.signout') }}">Sign out</a></li>
+                        </ul>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path_for('auth.signup') }}">Log In / Sign up</a>
+                    </li>
+                {% endif %}
+
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,36 @@
+{% extends 'templates/app.twig' %}
+
+{% block content %}
+    <div id="sign" class="section">
+        <div class="container">
+            <div class="row full-height justify-content-center">
+                <div class="col-12 text-center align-self-center pb-5">
+                    <div class="section mt-0 pb-5 text-center">
+                        <div class="card-3d-wrap mx-auto mt-0">
+                            <div class="card-3d-wrapper">
+                                <div class="card-stay">
+                                    <div class="center-wrap">
+                                        <div class="section text-center">
+                                            <h4 class="mb-4 pb-1">Delete Account</h4>
+                                            <form action="{{ path_for('auth.account.delete') }}" method="post" autocomplete="off">
+                                                <div class="form-group">
+                                                    <input type="password" name="password" class="form-control {{ errors.password ? 'is-invalid' : '' }}" placeholder="Your Current Password" id="password" autocomplete="off">
+                                                    <i class="input-icon uil uil-lock-alt"></i>
+                                                    <div class="invalid-feedback">
+                                                        {{ errors.password | first }}
+                                                    </div>
+                                                </div>
+                                                <input type="submit" class="btn mt-4" value="Delete account"/>
+                                                {{ csrf.field | raw}}
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

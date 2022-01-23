@@ -1,0 +1,33 @@
+{% extends 'templates/app.twig' %}
+
+{% block content %}
+    <div class="container">
+        <h2 class="m-3">Delete the list</h2>
+        <form action="{{path_for('edit.removelist',{'secureToken' : value.token})}}" method="post" autocomplete="off">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">expiration date</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope='row'>{{ value.no }}</th>
+                        <td>{{ value.title }}</td>
+                        <td>{{ value.descr }}</td>
+                        <td>{{ value.expiration }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div>
+                <a href="{{path_for('liste',{'secureToken' : value.token})}}" id="add-btn" type="button" class="btn mt-4 align-items-end">Cancel</a>
+                <input id="add-btn" type="submit" class="btn mt-4 align-items-end" value="Delete"/>
+            </div>
+            {{ csrf.field | raw}}
+        </form>
+    </div>
+
+{% endblock %}

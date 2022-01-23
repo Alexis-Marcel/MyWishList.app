@@ -1,0 +1,48 @@
+{% extends 'templates/app.twig' %}
+
+{% block content %}
+    <div class="container">
+        <h2 class="m-3">Delete the item</h2>
+        <form action="{{path_for('edit.removeitem',{'secureToken' : value.token, 'id' : value.id})}}" method="post" autocomplete="off">
+            <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Price</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope='row'>{{ value.id }}</th>
+                            <td>{{ value.name }}</td>
+                            <td>{{ value.descr }}</td>
+                            <td>{{ value.price }}</td>
+                        </tr>
+
+                        </tbody>
+            </table>
+            <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">External url (optional)</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                             {{ value.url }}
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+            <div>
+                <a href="{{path_for('item',{'secureToken' : value.token,'id' : value.id})}}" id="add-btn" type="button" class="btn mt-4 align-items-end">Cancel</a>
+                <input id="add-btn" type="submit" class="btn mt-4 align-items-end" value="Delete"/>
+            </div>
+            {{ csrf.field | raw}}
+        </form>
+    </div>
+
+{% endblock %}

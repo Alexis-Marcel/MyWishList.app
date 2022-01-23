@@ -1,0 +1,78 @@
+{% extends 'templates/app.twig' %}
+
+{% block content %}
+
+    <h2 class="mt-4">Edit the item</h2>
+    <form action="{{path_for('edit.edititem',{'secureToken' : old_value.token, 'id' : old_value.id})}}" method="post" autocomplete="off">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Image</th>
+                <th scope="col">Price</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control {{ errors.name ? 'is-invalid' : '' }}" placeholder="Name of the item" id="name" autocomplete="off" value="{{ old_value.name }}">
+                        <div class="invalid-feedback">
+                            {{ errors.name | first }}
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <input type="text" name="descr" class="form-control {{ errors.descr ? 'is-invalid' : '' }}" placeholder="Description of the item" id="descr" autocomplete="off" value="{{ old_value.descr }}">
+                        <div class="invalid-feedback">
+                            {{ errors.descr | first }}
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <input type="text" name="image" class="form-control {{ errors.image ? 'is-invalid' : '' }}" placeholder="The image corresponding to the item" id="image" autocomplete="off" value="{{ old_value.image }}">
+                        <div class="invalid-feedback">
+                            {{ errors.image | first }}
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <input type="text" name="price" class="form-control {{ errors.price ? 'is-invalid' : '' }}" placeholder="Price of the item" id="price" autocomplete="off" value="{{ old_value.price }}">
+                        <div class="invalid-feedback">
+                            {{ errors.price | first }}
+                        </div>
+                    </div>
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">External url (optional)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <input type="text" name="url" class="form-control {{ errors.url ? 'is-invalid' : '' }}" placeholder="Link to an external site" id="url" autocomplete="off" value="{{ old_value.url }}">
+                        <div class="invalid-feedback">
+                            {{ errors.url | first }}
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="float-end">
+            <input id="add-btn" type="submit" class="btn mt-4 align-items-end" value="Edit"/>
+        </div>
+        {{ csrf.field | raw}}
+    </form>
+{% endblock %}

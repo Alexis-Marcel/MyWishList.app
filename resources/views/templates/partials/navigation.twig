@@ -1,0 +1,14 @@
+<!-- Sidebar Holder -->
+<nav class="active" id="sidebar">
+    <div class="sidebar-header">
+        <h3>My WishList</h3>
+    </div>
+
+    <ul class="list-unstyled components">
+        <li class='active'>
+            <a href=" {{ path_for('home') }}">Home</a>
+        </li>
+        {{ link | raw }}
+    </ul>
+
+</nav>

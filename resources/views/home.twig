@@ -1,0 +1,42 @@
+{% extends 'templates/app.twig' %}
+
+{% block content %}
+    <div class="container">
+        <h2 class="m-3">My own wish lists</h2>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">expiration date</th>
+            </tr>
+            </thead>
+            <tbody>
+                {{ listes |raw }}
+            </tbody>
+        </table>
+        <h2 class="m-3">Public Lists</h2>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">expiration date</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{ ListePublique |raw }}
+            </tbody>
+        </table>
+        <form class="mt-5" action="{{ path_for('home') }}" method="post" autocomplete="off">
+            <div class="form-group">
+                <input type="text" name="token" class="form-control" placeholder="Enter a shared token" id="token" autocomplete="off">
+                <i class="input-icon fas fa-share-square"></i>
+            </div>
+            <input type="submit" class="btn mt-4" value="Go to a shared list"/>
+            {{ csrf.field | raw}}
+        </form>
+    </div>
+
+{% endblock %}
