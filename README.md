@@ -1,23 +1,43 @@
-# MyWishList.app
+# Gift List Web Application
 
-#######     This project was carried out as part of the web/server programming module of the Nancy computer science diploma.        ########
+## Overview
 
-It consists in creating a web application allowing to create lists of gifts that can be reserved to offer.
+This project was carried out as part of the web/server programming module of the Nancy computer science diploma. It involves the creation of a web application that allows users to create, share, and reserve gift lists for various occasions. This application aims to simplify the process of gift-giving by providing a convenient platform for managing and coordinating gifts.
 
+## Features
 
-Project setup : 
+- Create and manage gift lists.
+- Reserve gifts to prevent duplicate presents.
+- Share lists with friends and family.
+- User-friendly interface for easy navigation and interaction.
 
+## Technologies Used
 
-• This project was made in php, so you need to install the php package at the following link: https://www.php.net/ , and then add the download folder to the PATH.
+- **Backend:** PHP, Slim framework
+- **ORM:** Eloquent
+- **Frontend:** HTML, CSS, Twig templating engine
+- **Database:** MySQL
 
-• The project uses Composer. To start, you need to install composer at this address : https://getcomposer.org/
+## Installation and Usage
 
-• Then use the following command in the terminal at the root of the project: composer install
+To set up and run the application, follow these steps:
 
-• Finally you can host the project with a local host such as XAMPP : https://www.apachefriends.org/fr/index.html
+1. Install PHP from [PHP Official Website](https://www.php.net/) and add the download folder to your system's PATH.
+2. Install Composer from [Get Composer](https://getcomposer.org/).
+3. Run the following command in the terminal at the root of the project:
+   ```
+   composer install
+   ```
+4. Host the project using a local server like XAMPP, available at [Apache Friends](https://www.apachefriends.org/index.html).
+5. Create the database using the `wish_bdd.sql` file, which can be imported to set up the necessary tables and schema.
 
-• For the proper functioning of the application you must create the corresponding database. You can do this easily with the wish_bdd.sql file that you just have to import.
+## Contributing
 
+Contributions to enhance the application and add new features are welcome. Please feel free to fork the repository and submit pull requests.
 
+## Authors
 
-© Copyright Alexis MARCEL, Lilian LEBLANC, Justine PRULIERE 
+- Alexis MARCEL
+- Lilian LEBLANC
+- Justine PRULIERE
+
